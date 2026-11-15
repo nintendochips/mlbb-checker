@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Mobile Legends Account ID</title>
+  <meta name="description" content="Instantly verify username and region of Mobile Legends accounts via ID">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body>
+  <!-- Ralphy Ambient Background -->
+  <div class="ralphy-ambient" aria-hidden="true">
+    <div class="ralphy-ambient__grain"></div>
+    <div class="ralphy-ambient__glow ralphy-ambient__glow--one"></div>
+    <div class="ralphy-ambient__glow ralphy-ambient__glow--two"></div>
+    <div class="ralphy-ambient__grid"></div>
+  </div>
+
+  <main class="main-container">
+    <div class="content-wrapper">
+
+      <!-- Header -->
+      <div class="header fade-in" id="header">
+        <div class="logo-glow">
+          <img src="./img/logo-ml.webp" alt="Mobile Legends Logo" class="logo-img">
+        </div>
+        <h1 class="title">Check Account ID <span class="title-accent">Mobile Legends</span></h1>
+        <p class="subtitle">Instantly verify username and region of Mobile Legends accounts</p>
+      </div>
+
+      <!-- Card -->
+      <div class="fade-in fade-in-delay" id="card-container">
+        <div class="glass-card">
+          <!-- Card Header -->
+          <div class="card-header">
+            <div class="card-header-icon">
+              <i data-lucide="search" class="icon-sm"></i>
+            </div>
+            <div>
+              <h2 class="card-title">Validate Account</h2>
+              <p class="card-desc">Enter your User ID and Server ID</p>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="card-body">
+            <form id="validation-form" class="form-grid">
+              <div class="input-group">
+                <label for="gameId" class="input-label">
+                  <i data-lucide="hash" class="icon-xs"></i>
+                  <span>User ID</span>
+                </label>
+                <input type="number"
+                  id="gameId"
+                  placeholder="Example: 496332516" autocomplete="off"
+                  class="input-field"
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="serverId" class="input-label">
+                  <i data-lucide="server" class="icon-xs"></i>
+                  <span>Server ID</span>
+                </label>
+                <input type="number"
+                  id="serverId"
+                  placeholder="Example: 2463" autocomplete="off"
+                  class="input-field"
+                />
+              </div>
+
+              <button
+                type="submit"
+                id="submit-button"
+                class="submit-btn"
+              >
+                <i data-lucide="search" class="icon-sm"></i>
+                <span>Check Now</span>
+              </button>
+            </form>
+
+            <!-- Error -->
+            <div id="error-container" class="alert alert-error hidden">
+              <div class="alert-inner">
+                <i data-lucide="alert-circle" class="icon-sm"></i>
+                <p id="error-message"></p>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div id="result-container" class="result-card hidden">
+              <div class="result-header">
+                <i data-lucide="check-circle-2" class="icon-sm text-emerald"></i>
+                <h3 class="result-title">Account Found!</h3>
+              </div>
+
+              <div class="result-grid">
+                <div class="result-item">
+                  <div class="result-icon-wrap">
+                    <i data-lucide="user" class="icon-sm"></i>
+                  </div>
+                  <div>
+                    <p class="result-label">Nickname</p>
+                    <p class="result-value" id="result-nickname"></p>
+                  </div>
+                </div>
+
+                <div class="result-item">
+                  <div class="result-icon-wrap">
+                    <i data-lucide="globe" class="icon-sm"></i>
+                  </div>
+                  <div>
+                    <p class="result-label">Country</p>
+                    <p class="result-value" id="result-country"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+</html>
